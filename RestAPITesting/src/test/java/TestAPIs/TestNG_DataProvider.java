@@ -23,13 +23,16 @@ public class TestNG_DataProvider extends testData{
 		JSONObject body=new JSONObject();
 		body.put("name", name);
 		body.put("job", job);
-		Response resp=request.get("https://reqres.in/api/users");
+		
 		request.contentType(ContentType.JSON).accept(ContentType.JSON).header("content-type","application/json").body(body.toString());
+		
+		Response resp=request.post("https://reqres.in/api/users");
+		
 		int statuscode=resp.statusCode();
 		System.out.print(statuscode);
 		resp.getBody().prettyPrint();
 		
-		Assert.assertEquals(statuscode,200);
+		Assert.assertEquals(statuscode,201);
 		
 		
 		
@@ -52,7 +55,7 @@ public class TestNG_DataProvider extends testData{
 		
 		.contentType(ContentType.JSON).accept(ContentType.JSON).header("content-type", "application/json").body(obj.toString())
 		
-		.when().get("https://reqres.in/api/users")
+		.when().post("https://reqres.in/api/users")
 		.then().log().body().toString();
 		
 		

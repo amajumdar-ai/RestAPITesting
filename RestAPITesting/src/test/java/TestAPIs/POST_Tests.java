@@ -1,5 +1,7 @@
 package TestAPIs;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,6 +16,7 @@ import io.restassured.http.Cookies;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import utils.DataDriven;
+
 
 
 public class POST_Tests extends DataDriven {
@@ -44,7 +47,7 @@ public class POST_Tests extends DataDriven {
 	System.out.print(responsebody);
 	int statuscode=resp.getStatusCode();
 	System.out.print(statuscode);
-	Assert.assertEquals(statuscode, 201);
+	AssertJUnit.assertEquals(statuscode, 201);
 	
 	
 		
@@ -83,7 +86,7 @@ public class POST_Tests extends DataDriven {
 		int statuscode=response.getStatusCode();
 		System.out.print(statuscode);
 		//Assert.assertEquals(body, body.contains("null"));
-		Assert.assertEquals(statuscode, 200);
+		AssertJUnit.assertEquals(statuscode, 200);
 		
 		
 		

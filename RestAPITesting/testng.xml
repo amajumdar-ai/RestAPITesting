@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+<parameter name="ABC" value="ABCD"></parameter>
+<parameter name="V1" value="ABCDE"></parameter>
+    
+   
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="TestAPIs.TestNG_DataProvider"/>
+      <class name="TestAPIs.POST_Tests"/>
+      <class name=".POJO"/>
+      <class name="TestAPIs.GETCall"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -3,11 +3,21 @@
 <suite parallel="none" name="Failed suite [Default suite]">
   <test parallel="none" name="Default test(failed)">
     <classes>
-      <class name="POJO">
+      <class name="TestAPIs.GETCall">
+        <methods>
+          <include name="generateReport"/>
+        </methods>
+      </class> <!-- TestAPIs.GETCall -->
+      <class name="TwitterAPIs.Twitter_POST">
         <methods>
           <include name="POST"/>
         </methods>
-      </class> <!-- POJO -->
+      </class> <!-- TwitterAPIs.Twitter_POST -->
+      <class name="generatereport">
+        <methods>
+          <include name="generateReport"/>
+        </methods>
+      </class> <!-- generatereport -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

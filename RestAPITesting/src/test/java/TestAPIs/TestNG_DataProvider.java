@@ -1,5 +1,7 @@
 package TestAPIs;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import org.json.JSONObject;
 import org.testng.Assert;
 
@@ -10,6 +12,7 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+
 
 public class TestNG_DataProvider extends testData{
 	
@@ -32,7 +35,7 @@ public class TestNG_DataProvider extends testData{
 		System.out.print(statuscode);
 		resp.getBody().prettyPrint();
 		
-		Assert.assertEquals(statuscode,201);
+		AssertJUnit.assertEquals(statuscode,201);
 		
 		
 		

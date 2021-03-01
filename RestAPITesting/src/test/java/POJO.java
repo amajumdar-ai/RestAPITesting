@@ -1,3 +1,5 @@
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -5,6 +7,7 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+
 
 
 
@@ -25,7 +28,7 @@ public class POJO {
 		//System.out.print(body);
 		int status=resp.getStatusCode();
 		System.out.print(status);
-		Assert.assertEquals(status, 201);
+		AssertJUnit.assertEquals(status, 201);
 		
 	
 	}

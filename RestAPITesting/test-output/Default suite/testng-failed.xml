@@ -3,16 +3,16 @@
 <suite parallel="none" name="Failed suite [Default suite]">
   <test parallel="none" name="Default test(failed)">
     <classes>
+      <class name="TestAPIs.POST_Tests">
+        <methods>
+          <include name="postdata" invocation-numbers="0 1 2"/>
+        </methods>
+      </class> <!-- TestAPIs.POST_Tests -->
       <class name="TestAPIs.GETCall">
         <methods>
           <include name="generateReport"/>
         </methods>
       </class> <!-- TestAPIs.GETCall -->
-      <class name="TwitterAPIs.Twitter_POST">
-        <methods>
-          <include name="POST"/>
-        </methods>
-      </class> <!-- TwitterAPIs.Twitter_POST -->
       <class name="generatereport">
         <methods>
           <include name="generateReport"/>

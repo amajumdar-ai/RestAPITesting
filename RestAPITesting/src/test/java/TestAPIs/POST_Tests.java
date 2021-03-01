@@ -72,7 +72,7 @@ public class POST_Tests extends DataDriven {
 	public void update()
 	{
 		RequestSpecification request=RestAssured.given();
-		Map<String, Object>map=new HashMap<>();
+		Map<String, Object>map=new HashMap<String,Object>();
 		map.put("id", 201);
 		map.put("title", "abc");
 		map.put("id", 212);
@@ -96,7 +96,7 @@ public class POST_Tests extends DataDriven {
 	public  void postdata(String title, String author, int id )
 	{
 		RequestSpecification req=RestAssured.given();
-		Map<String, Object>map=new HashMap<>();
+		Map<String, Object>map=new HashMap<String,Object>();
 		map.put("id", id);
 		map.put("title", title);
 		map.put("author",author);

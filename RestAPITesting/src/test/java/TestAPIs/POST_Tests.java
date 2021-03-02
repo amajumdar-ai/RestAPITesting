@@ -5,8 +5,11 @@ import org.testng.AssertJUnit;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.json.JSONObject;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -47,7 +50,7 @@ public class POST_Tests extends DataDriven {
 	System.out.print(responsebody);
 	int statuscode=resp.getStatusCode();
 	System.out.print(statuscode);
-	AssertJUnit.assertEquals(statuscode, 201);
+	Assert.assertEquals(statuscode, 201);
 	
 	
 		
@@ -86,7 +89,7 @@ public class POST_Tests extends DataDriven {
 		int statuscode=response.getStatusCode();
 		System.out.print(statuscode);
 		//Assert.assertEquals(body, body.contains("null"));
-		AssertJUnit.assertEquals(statuscode, 200);
+		Assert.assertEquals(statuscode, 200);
 		
 		
 		
@@ -114,6 +117,13 @@ public class POST_Tests extends DataDriven {
 		
 	}
 	
-	
+	@AfterTest()
+	public void generateLog()
+
+	{
+		final Logger logger = LogManager.getLogger(POST_Tests.class);  
+		
+
+	}
 
 }

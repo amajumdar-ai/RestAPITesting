@@ -1,7 +1,10 @@
 package TestAPIs;
 
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 import org.testng.AssertJUnit;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.json.JSONObject;
 import org.testng.Assert;
 
@@ -16,7 +19,14 @@ import io.restassured.specification.RequestSpecification;
 
 public class TestNG_DataProvider extends testData{
 	
-	
+	@AfterTest()
+	public void generateLog()
+
+	{
+		final Logger logger = LogManager.getLogger(TestNG_DataProvider.class);  
+		
+
+	}
 	
 	@Test(dataProvider="POSTExample1")
 	public void POSTExample1(String name, String job)

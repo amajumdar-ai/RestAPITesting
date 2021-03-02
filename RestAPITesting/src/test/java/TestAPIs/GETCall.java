@@ -10,6 +10,8 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import org.testng.AssertJUnit;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.json.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -23,24 +25,21 @@ import io.restassured.specification.ResponseSpecification;
 
 
 public class GETCall {
-	static ExtentHtmlReporter reporter;
-	static ExtentReports reports;
-	static ExtentTest logger;
-	static ExtentTest logger2;
-@BeforeTest()
-public void generateReport()
+
+@AfterTest()
+public void generateLog()
+
 {
- reporter=new ExtentHtmlReporter(System.getProperty("user.dir")+"/test-output/report.html");
- reports=new ExtentReports();
-reports.attachReporter(reporter);
-logger=reports.createTest("getcalltest");
-logger.getStatus();
- logger2=reports.createTest("POSTTest");
-logger2.getStatus();
+	final Logger logger = LogManager.getLogger(GETCall.class);  
+	logger.trace("Fetched log");
+	
+	
+
 }
 	@Test
 	public void getcalltest()
 	{
+		
 		
 		RequestSpecification request= RestAssured.given();
 		Response resp=request.get("https://reqres.in/api/unknown/2");
@@ -49,7 +48,7 @@ logger2.getStatus();
 	int statuscode=resp.getStatusCode();
 	System.out.println(statuscode);
 	Assert.assertEquals(statuscode, 200);
-	ExtentTest test=reports.createTest("getcall");
+	
 		
 		
 		
@@ -71,8 +70,8 @@ logger2.getStatus();
 		System.out.print(statuscode);
 		resp.getBody().prettyPrint();
 		
-		AssertJUnit.assertEquals(statuscode,200);
-		ExtentTest test=reports.createTest("POSTTest");
+		Assert.assertEquals(statuscode,200);
+		
 		
 		
 		

@@ -3,14 +3,11 @@
 <suite parallel="none" name="Failed suite [Default suite]">
   <test parallel="none" name="Default test(failed)">
     <classes>
-      <class name="TestAPIs.POST_Tests">
-        <methods>
-          <include name="postdata" invocation-numbers="0 1 2"/>
-        </methods>
-      </class> <!-- TestAPIs.POST_Tests -->
       <class name="TestAPIs.GETCall">
         <methods>
-          <include name="generateReport"/>
+          <include name="getcalltest"/>
+          <include name="POSTTest"/>
+          <include name="generateLog"/>
         </methods>
       </class> <!-- TestAPIs.GETCall -->
       <class name="generatereport">
@@ -18,6 +15,16 @@
           <include name="generateReport"/>
         </methods>
       </class> <!-- generatereport -->
+      <class name="TestAPIs.TestNG_DataProvider">
+        <methods>
+          <include name="generateLog"/>
+        </methods>
+      </class> <!-- TestAPIs.TestNG_DataProvider -->
+      <class name="TestAPIs.POST_Tests">
+        <methods>
+          <include name="generateLog"/>
+        </methods>
+      </class> <!-- TestAPIs.POST_Tests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

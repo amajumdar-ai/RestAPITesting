@@ -31,19 +31,57 @@ div.shootout {padding:2em;border:3px #4854A8 solid}
 <body>
 <table cellspacing="0" cellpadding="0" class="result">
 <tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
-<tr><td style="text-align:left;padding-right:2em">Default test</td><td class="numi">13</td><td class="numi">13</td><td class="numi">0</td><td class="numi">0</td><td class="numi">6.5 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr><td style="text-align:left;padding-right:2em">Default test</td><td class="numi">12</td><td class="numi">12</td><td class="numi">0</td><td class="numi_attn">1</td><td class="numi">15.0 seconds</td><td class="numi"></td><td class="numi"></td></tr>
 </table>
 <table cellspacing="0" cellpadding="0" class="passed" id="summary">
 <tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
+<tr><th colspan="4">Default test &#8212; failed</th></tr>
+<tr class="failedodd"><td rowspan="1">ObjectMapper</td><td><a href="#m1"><b>POSTCall1</b>  </a></td><td class="numi">1</td><td>1615009726080</td><td class="numi">346</td></tr>
 <tr><th colspan="4">Default test &#8212; passed</th></tr>
-<tr class="passedodd"><td rowspan="1">POJO</td><td><a href="#m1"><b>POST</b>  </a></td><td class="numi">1</td><td>1614674461232</td><td class="numi">2682</td></tr>
-<tr class="passedeven"><td rowspan="6">TestAPIs.TestNG_DataProvider</td><td><a href="#m2"><b>POSTExample1</b>  </a></td><td class="numi">1</td><td>1614674463916</td><td class="numi">590</td></tr><tr class="passedeven"><td><a href="#m3"><b>POSTExample2</b>  </a></td><td class="numi">5</td><td>1614674464508</td><td class="numi">2298</td></tr><tr class="passedeven"><td><a href="#m4"><b>POSTExample2</b>  </a></td><td class="numi">5</td><td>1614674464508</td><td class="numi">2298</td></tr><tr class="passedeven"><td><a href="#m5"><b>POSTExample2</b>  </a></td><td class="numi">5</td><td>1614674464508</td><td class="numi">2298</td></tr><tr class="passedeven"><td><a href="#m6"><b>POSTExample2</b>  </a></td><td class="numi">5</td><td>1614674464508</td><td class="numi">2298</td></tr><tr class="passedeven"><td><a href="#m7"><b>POSTExample2</b>  </a></td><td class="numi">5</td><td>1614674464508</td><td class="numi">2298</td></tr>
-<tr class="passedodd"><td rowspan="3">TestAPIs.POST_Tests</td><td><a href="#m8"><b>postdata</b>  </a></td><td class="numi">3</td><td>1614674466808</td><td class="numi">356</td></tr><tr class="passedodd"><td><a href="#m9"><b>postdata</b>  </a></td><td class="numi">3</td><td>1614674466808</td><td class="numi">356</td></tr><tr class="passedodd"><td><a href="#m10"><b>postdata</b>  </a></td><td class="numi">3</td><td>1614674466808</td><td class="numi">356</td></tr>
-<tr class="passedeven"><td rowspan="2">TestAPIs.GETCall</td><td><a href="#m11"><b>POSTTest</b>  </a></td><td class="numi">1</td><td>1614674467165</td><td class="numi">98</td></tr><tr class="passedeven"><td><a href="#m12"><b>getcalltest</b>  </a></td><td class="numi">1</td><td>1614674467264</td><td class="numi">76</td></tr>
-<tr class="passedodd"><td rowspan="1">TestAPIs.POST_Tests</td><td><a href="#m13"><b>getRecords</b>  </a></td><td class="numi">1</td><td>1614674467341</td><td class="numi">45</td></tr>
+<tr class="passedodd"><td rowspan="6">TestAPIs.TestNG_DataProvider</td><td><a href="#m2"><b>POSTExample1</b>  </a></td><td class="numi">1</td><td>1615009713709</td><td class="numi">5223</td></tr><tr class="passedodd"><td><a href="#m3"><b>POSTExample2</b>  </a></td><td class="numi">5</td><td>1615009718935</td><td class="numi">6457</td></tr><tr class="passedodd"><td><a href="#m4"><b>POSTExample2</b>  </a></td><td class="numi">5</td><td>1615009718935</td><td class="numi">6457</td></tr><tr class="passedodd"><td><a href="#m5"><b>POSTExample2</b>  </a></td><td class="numi">5</td><td>1615009718935</td><td class="numi">6457</td></tr><tr class="passedodd"><td><a href="#m6"><b>POSTExample2</b>  </a></td><td class="numi">5</td><td>1615009718935</td><td class="numi">6457</td></tr><tr class="passedodd"><td><a href="#m7"><b>POSTExample2</b>  </a></td><td class="numi">5</td><td>1615009718935</td><td class="numi">6457</td></tr>
+<tr class="passedeven"><td rowspan="3">TestAPIs.POST_Tests</td><td><a href="#m8"><b>postdata</b>  </a></td><td class="numi">3</td><td>1615009725394</td><td class="numi">684</td></tr><tr class="passedeven"><td><a href="#m9"><b>postdata</b>  </a></td><td class="numi">3</td><td>1615009725394</td><td class="numi">684</td></tr><tr class="passedeven"><td><a href="#m10"><b>postdata</b>  </a></td><td class="numi">3</td><td>1615009725394</td><td class="numi">684</td></tr>
+<tr class="passedodd"><td rowspan="2">TestAPIs.GETCall</td><td><a href="#m11"><b>POSTTest</b>  </a></td><td class="numi">1</td><td>1615009726428</td><td class="numi">1637</td></tr><tr class="passedodd"><td><a href="#m12"><b>getcalltest</b>  </a></td><td class="numi">1</td><td>1615009728067</td><td class="numi">473</td></tr>
+<tr class="passedeven"><td rowspan="1">TestAPIs.POST_Tests</td><td><a href="#m13"><b>getRecords</b>  </a></td><td class="numi">1</td><td>1615009728541</td><td class="numi">71</td></tr>
 </table>
 <h1>Default test</h1>
-<h2 id="m1">TestAPIs.TestNG_DataProvider:POSTExample2</h2>
+<h2 id="m1">ObjectMapper:POSTCall1</h2>
+<div style="padding-left:3em">
+<p>expected [201] but found [500]</p>
+org.testng.Assert.fail(Assert.java:94)
+<br/>at org.testng.Assert.failNotEquals(Assert.java:494)
+<br/>at org.testng.Assert.assertEquals(Assert.java:123)
+<br/>at org.testng.Assert.assertEquals(Assert.java:370)
+<br/>at org.testng.Assert.assertEquals(Assert.java:380)
+<br/>at ObjectMapper.POSTCall1(ObjectMapper.java:37)
+<br/>25 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m2">TestAPIs.TestNG_DataProvider:POSTExample1</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>Arpita</td>
+<td>majumdar</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m3">TestAPIs.TestNG_DataProvider:POSTExample2</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>abc</td>
+<td>xyz</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m4">TestAPIs.POST_Tests:postdata</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>cube</td>
+<td>arpita</td>
+<td>101</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m5">TestAPIs.TestNG_DataProvider:POSTExample2</h2>
 <table cellspacing="0" cellpadding="0" class="result">
 <tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
 <tr class="param stripe"><td>APP</td>
@@ -51,19 +89,9 @@ div.shootout {padding:2em;border:3px #4854A8 solid}
 </tr>
 </table>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m2">POJO:POST</h2>
+<h2 id="m6">TestAPIs.POST_Tests:getRecords</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m3">TestAPIs.TestNG_DataProvider:POSTExample2</h2>
-<table cellspacing="0" cellpadding="0" class="result">
-<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
-<tr class="param stripe"><td>Iam</td>
-<td>Arpita</td>
-</tr>
-</table>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m4">TestAPIs.GETCall:POSTTest</h2>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m5">TestAPIs.POST_Tests:postdata</h2>
+<h2 id="m7">TestAPIs.POST_Tests:postdata</h2>
 <table cellspacing="0" cellpadding="0" class="result">
 <tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
 <tr class="param stripe"><td>status</td>
@@ -72,23 +100,15 @@ div.shootout {padding:2em;border:3px #4854A8 solid}
 </tr>
 </table>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m6">TestAPIs.TestNG_DataProvider:POSTExample2</h2>
+<h2 id="m8">TestAPIs.TestNG_DataProvider:POSTExample2</h2>
 <table cellspacing="0" cellpadding="0" class="result">
 <tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
-<tr class="param stripe"><td>abc</td>
-<td>xyz</td>
+<tr class="param stripe"><td>Iam</td>
+<td>Arpita</td>
 </tr>
 </table>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m7">TestAPIs.TestNG_DataProvider:POSTExample1</h2>
-<table cellspacing="0" cellpadding="0" class="result">
-<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
-<tr class="param stripe"><td>Arpita</td>
-<td>majumdar</td>
-</tr>
-</table>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m8">TestAPIs.POST_Tests:postdata</h2>
+<h2 id="m9">TestAPIs.POST_Tests:postdata</h2>
 <table cellspacing="0" cellpadding="0" class="result">
 <tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
 <tr class="param stripe"><td>roll</td>
@@ -97,24 +117,15 @@ div.shootout {padding:2em;border:3px #4854A8 solid}
 </tr>
 </table>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m9">TestAPIs.TestNG_DataProvider:POSTExample2</h2>
+<h2 id="m10">TestAPIs.GETCall:POSTTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m11">TestAPIs.GETCall:getcalltest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m12">TestAPIs.TestNG_DataProvider:POSTExample2</h2>
 <table cellspacing="0" cellpadding="0" class="result">
 <tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
 <tr class="param stripe"><td>ABC</td>
 <td>12</td>
-</tr>
-</table>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m10">TestAPIs.GETCall:getcalltest</h2>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m11">TestAPIs.POST_Tests:getRecords</h2>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m12">TestAPIs.POST_Tests:postdata</h2>
-<table cellspacing="0" cellpadding="0" class="result">
-<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
-<tr class="param stripe"><td>cube</td>
-<td>arpita</td>
-<td>101</td>
 </tr>
 </table>
 <p class="totop"><a href="#summary">back to summary</a></p>

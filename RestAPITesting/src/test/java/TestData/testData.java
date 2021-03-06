@@ -7,6 +7,8 @@ public class testData {
 	
 	
 	
+	
+	
 	@DataProvider(name="POSTExample1")
 	
 	public Object[][] dataforPst(){

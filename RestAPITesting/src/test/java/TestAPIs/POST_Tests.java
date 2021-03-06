@@ -1,6 +1,11 @@
 package TestAPIs;
 
 import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
 import org.testng.AssertJUnit;
 import java.util.HashMap;
 import java.util.Map;
@@ -9,21 +14,34 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.json.JSONObject;
 import org.testng.Assert;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.http.Cookies;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import utils.DataDriven;
 
 
 
+
+
 public class POST_Tests extends DataDriven {
-	
+	ExtentHtmlReporter htmlReporter;
+	ExtentReports extent;
+
+@BeforeSuite
+public void setUp() {
+	htmlReporter = new ExtentHtmlReporter("extent.html");
+	extent = new ExtentReports();
+	extent.attachReporter(htmlReporter);	
+}
 	//@Test(priority=1)
 	public void POSTCall1()
 	{
@@ -61,6 +79,7 @@ public class POST_Tests extends DataDriven {
 	@Test(priority=2)
 	public void getRecords()
 	{
+		ExtentTest test = extent.createTest("MyFirstTest", "Sample description");
 		RequestSpecification request=RestAssured.given();
 		Response response=request.get("http://localhost:3000/posts");
 		String resp=response.getBody().prettyPrint();
@@ -98,6 +117,7 @@ public class POST_Tests extends DataDriven {
 	@Test(dataProvider="dataforpost")
 	public  void postdata(String title, String author, int id )
 	{
+		ExtentTest test = extent.createTest("MyFirstTest", "Sample description");
 		RequestSpecification req=RestAssured.given();
 		Map<String, Object>map=new HashMap<String,Object>();
 		map.put("id", id);
@@ -114,7 +134,7 @@ public class POST_Tests extends DataDriven {
 		
 		
 		
-		
+	
 	}
 	
 	@AfterTest()
@@ -124,6 +144,11 @@ public class POST_Tests extends DataDriven {
 		final Logger logger = LogManager.getLogger(POST_Tests.class);  
 		
 
+	}
+	
+    @AfterSuite
+	public void tearDown() {
+		 extent.flush();
 	}
 
 }

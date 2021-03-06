@@ -1,33 +1,101 @@
 package utils;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+
 public class exceldata {
 	static XSSFWorkbook workbook;
 	static XSSFSheet sheet;
-	public exceldata(String excelPath,XSSFSheet sheet ) throws IOException
-	{
-		String excelPath1="/Users/manish/RestAPITesting/RestAPITesting/src/main/java/Data/Book.xlsx";
-		 workbook= new XSSFWorkbook(excelPath1);
-		 sheet=workbook.getSheet("Sheet1");
-		int no=sheet.getPhysicalNumberOfRows();
-		System.out.print("no of rows="+no);
+	
 		
-		DataFormatter d=new DataFormatter();
-		Object value=d.formatCellValue(sheet.getRow(1).getCell(2));
-		System.out.print("no of cell="+value);
-		
-	}
-	public static void main(String [] args) throws IOException {
-		rowCount();
-	}
-	private static void rowCount() {
-		// TODO Auto-generated method stub
-		
-	}
 
-}
+
+		public exceldata(String excelPath, String sheetName) {
+			try {
+		
+			workbook = new XSSFWorkbook(excelPath);
+			sheet = workbook.getSheet(sheetName);
+			
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+			
+		}
+
+		
+		public static void main(String[] args) {
+			//getRowCount();
+			//getCellDataString(0,0);
+			//getCellDataNumber(1,1);
+		}
+			public static int getRowCount() {
+				int rowCount=0;
+				try {
+					
+					rowCount = sheet.getPhysicalNumberOfRows();
+					System.out.println("No of rows : "+rowCount);
+
+				}catch(Exception exp) {
+					System.out.println(exp.getMessage());;
+					System.out.println(exp.getCause());
+					exp.printStackTrace();
+				}
+				return rowCount;
+
+			}
+			
+			public static int getColCount() {
+				int colCount=0;
+				try {
+					
+					colCount = sheet.getRow(0).getPhysicalNumberOfCells();
+					System.out.println("No of columns : "+colCount);
+
+				}catch(Exception exp) {
+					System.out.println(exp.getMessage());;
+					System.out.println(exp.getCause());
+					exp.printStackTrace();
+				}
+				return colCount;
+
+			}
+			
+
+			public static String getCellDataString(int rowNum, int colNum) {
+				String cellData=null;
+				try {
+					
+					cellData = sheet.getRow(rowNum).getCell(colNum).getStringCellValue();
+					//System.out.println(cellData);
+
+				}catch(Exception exp) {
+					System.out.println(exp.getMessage());;
+					System.out.println(exp.getCause());
+					exp.printStackTrace();
+				}
+				return cellData;
+			}
+			
+			
+			public static void getCellDataNumber(int rowNum, int colNum) {
+				try {
+					
+					double cellData = sheet.getRow(rowNum).getCell(colNum).getNumericCellValue();
+					System.out.println(cellData);
+
+				}catch(Exception exp) {
+					System.out.println(exp.getMessage());;
+					System.out.println(exp.getCause());
+					exp.printStackTrace();
+				}
+			}
+
+		}
+
+	

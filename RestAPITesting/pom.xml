@@ -36,11 +36,13 @@
 </dependency>
 <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
 <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
 <dependency>
     <groupId>com.aventstack</groupId>
     <artifactId>extentreports</artifactId>
     <version>4.0.9</version>
 </dependency>
+
 
 
 
@@ -61,6 +63,11 @@
     <groupId>org.json</groupId>
     <artifactId>json</artifactId>
     <version>20180813</version>
+</dependency>
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi</artifactId>
+    <version>4.1.2</version>
 </dependency>
 <dependency>  
     <groupId>log4j</groupId>  

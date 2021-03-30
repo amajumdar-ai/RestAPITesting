@@ -3,30 +3,13 @@
 <suite parallel="none" name="Failed suite [Default suite]">
   <test parallel="none" name="Default test(failed)">
     <classes>
-      <class name="ObjectMapper">
+      <class name="Runner.TestRunner">
         <methods>
-          <include name="POSTCall1"/>
+          <include name="feature"/>
+          <include name="setUpClass"/>
+          <include name="tearDownClass"/>
         </methods>
-      </class> <!-- ObjectMapper -->
-      <class name="TestAPIs.TestNG_DataProvider">
-        <methods>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- TestAPIs.TestNG_DataProvider -->
-      <class name="TestAPIs.POST_Tests">
-        <methods>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="generateLog"/>
-        </methods>
-      </class> <!-- TestAPIs.POST_Tests -->
-      <class name="TestAPIs.GETCall">
-        <methods>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- TestAPIs.GETCall -->
+      </class> <!-- Runner.TestRunner -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

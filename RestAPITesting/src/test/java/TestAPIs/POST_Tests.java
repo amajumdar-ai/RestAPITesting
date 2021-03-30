@@ -2,16 +2,13 @@ package TestAPIs;
 
 import org.testng.annotations.Test;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
 
 import org.testng.AssertJUnit;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+
 import org.json.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
@@ -30,21 +27,22 @@ import utils.DataDriven;
 
 
 
+// POST Data Create-
+// 1. if the payload is simple having only 2-3 key value pair without having any array >> we use HashMap or JsonObject
+//2. If the payload is simple but there are huge no of data >> we prefer using excel sheet and then create the constructor of the class
+// 3. other way is to use the DataProvider function
+//4. If data is complex having multiple arrays and items within that then we create pojo--plain old java object--serialization deserialization
+
 
 
 public class POST_Tests extends DataDriven {
-	ExtentHtmlReporter htmlReporter;
-	ExtentReports extent;
+	
+	
 
-@BeforeSuite
-public void setUp() {
-	htmlReporter = new ExtentHtmlReporter("extent.html");
-	extent = new ExtentReports();
-	extent.attachReporter(htmlReporter);	
-}
 	//@Test(priority=1)
 	public void POSTCall1()
 	{
+		
 		
 		
 		RequestSpecification request=RestAssured.given();
@@ -60,6 +58,7 @@ public void setUp() {
 		map.put("title", "SEAD");
 		map.put("author", "XYZ");
 		
+		
 		request.contentType(ContentType.JSON).accept(ContentType.JSON)
 		.body(map.toString());
 		Response resp=request.post("http://localhost:3000/posts");
@@ -69,17 +68,22 @@ public void setUp() {
 	int statuscode=resp.getStatusCode();
 	System.out.print(statuscode);
 	Assert.assertEquals(statuscode, 201);
+	JsonPath path=resp.jsonPath();
+	String id=path.get("id");
+	 Assert.assertTrue(id.equalsIgnoreCase("201"));
 	
 	
+	
 		
 		
-		
+	
+	 
 		
 	}
 	@Test(priority=2)
 	public void getRecords()
 	{
-		ExtentTest test = extent.createTest("MyFirstTest", "Sample description");
+		
 		RequestSpecification request=RestAssured.given();
 		Response response=request.get("http://localhost:3000/posts");
 		String resp=response.getBody().prettyPrint();
@@ -117,7 +121,7 @@ public void setUp() {
 	@Test(dataProvider="dataforpost")
 	public  void postdata(String title, String author, int id )
 	{
-		ExtentTest test = extent.createTest("MyFirstTest", "Sample description");
+		
 		RequestSpecification req=RestAssured.given();
 		Map<String, Object>map=new HashMap<String,Object>();
 		map.put("id", id);
@@ -137,18 +141,8 @@ public void setUp() {
 	
 	}
 	
-	@AfterTest()
-	public void generateLog()
-
-	{
-		final Logger logger = LogManager.getLogger(POST_Tests.class);  
-		
-
-	}
 	
-    @AfterSuite
-	public void tearDown() {
-		 extent.flush();
-	}
+	
+   
 
 }

@@ -5,10 +5,6 @@ import org.testng.annotations.Test;
 
 public class testData {
 	
-	
-	
-	
-	
 	@DataProvider(name="POSTExample1")
 	
 	public Object[][] dataforPst(){
@@ -28,6 +24,7 @@ public class testData {
 			{"Iam","Arpita"},
 			{"abc","xyz"},
 			{"do","nothing"}
+			
 					
 					
 			
